@@ -12,7 +12,7 @@ export default class ContactInfo extends Component {
     data: [
       {
         icon: <FaUserCircle />,
-        head: "Nezam khan",
+        head: "Emon Ahmed Alif",
         subHead: "Beach Resort",
       },
       {
@@ -28,7 +28,7 @@ export default class ContactInfo extends Component {
       {
         icon: <FaPhone />,
         head: "Phone",
-        subHead: "+88001632146855",
+        subHead: "+8801627629729",
       },
     ],
   };
