@@ -7,6 +7,8 @@ import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Login from "./pages/Login";
+import Registration from "./pages/Registration";
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/rooms/" component={Rooms} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/registration" component={Registration} />
         <Route exact path="/rooms/:slug" component={SingleRoom} />
         <Route component={Error} />
       </Switch>

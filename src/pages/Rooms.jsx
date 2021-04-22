@@ -9,7 +9,7 @@ const Rooms = () => {
     <>
       <Hero hero="roomsHero">
         <Banner title="our rooms">
-          <Link to="/" className="btn-primary">
+          <Link to="/" className="custom-btn-primary">
             return home
           </Link>
         </Banner>

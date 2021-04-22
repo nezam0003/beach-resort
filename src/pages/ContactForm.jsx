@@ -32,10 +32,10 @@ const ContactForm = () => {
   };
   return (
     <>
-      <div className="card bg-dark text-light">
+      <div className="card shadow bg-light text-dark">
         <div className="card-body">
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
+            <div className="mb-2">
               <label htmlFor="name" className="form-label">
                 Name
               </label>
@@ -49,7 +49,7 @@ const ContactForm = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group">
+            <div className="mb-2">
               <label htmlFor="email" className="form-label">
                 Email
               </label>
@@ -64,7 +64,7 @@ const ContactForm = () => {
               />
             </div>
 
-            <div className="form-group">
+            <div className="mb-2">
               <label htmlFor="address" className="form-label">
                 Address
               </label>
@@ -78,7 +78,7 @@ const ContactForm = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group">
+            <div className="mb-2">
               <label htmlFor="phone" classphone="form-label">
                 Phone
               </label>
@@ -92,21 +92,21 @@ const ContactForm = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="form-group">
+            <div className="mb-2">
               <label htmlFor="message" className="form-label">
                 Message
               </label>
               <textarea
                 name="message"
                 id="message"
-                rows="5"
+                rows="3"
                 value={user.message}
                 onChange={handleChange}
                 className="form-control"
               ></textarea>
             </div>
 
-            <button type="submit" className="btn-primary">
+            <button type="submit" className="btn btn-success mt-2">
               Send
             </button>
           </form>

@@ -53,7 +53,7 @@ h6 {
   margin-bottom: 1.5em;
 }
 
-.btn-primary {
+.custom-btn-primary {
   display: inline-block;
   text-decoration: none;
   letter-spacing: var(--mainSpacing);
@@ -65,7 +65,7 @@ h6 {
   text-transform: uppercase;
   cursor: pointer;
 }
-.btn-primary:hover {
+.custom-btn-primary:hover {
   background: transparent;
   color: var(--primaryColor);
 }
@@ -88,7 +88,7 @@ h6 {
 }
 /* end of globals */
 /* Navbar */
-.navbar {
+.custom-navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -111,13 +111,13 @@ h6 {
   font-size: 1.5rem;
   color: var(--primaryColor);
 }
-.nav-links {
+.custom-nav-links {
   height: 0;
   overflow: hidden;
   transition: var(--mainTransition);
   list-style-type: none;
 }
-.nav-links a {
+.custom-nav-links a {
   display: block;
   text-decoration: none;
   padding: 1rem 0;
@@ -128,14 +128,14 @@ h6 {
   font-weight: 600;
   letter-spacing: var(--mainSpacing);
 }
-.nav-links a:hover {
+.custom-nav-links a:hover {
   color: var(--primaryColor);
 }
 
 .show-nav {
-  height: 150px;
+  height: 250px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 968px) {
   .nav-btn {
     display: none;
   }
@@ -144,12 +144,12 @@ h6 {
     margin: 0 auto;
     display: flex;
   }
-  .nav-links {
+  .custom-nav-links {
     height: auto;
     display: flex;
     margin-left: 4rem;
   }
-  .nav-links a {
+  .custom-nav-links a {
     margin: 0 1rem;
     padding: 0.5rem 0;
   }
@@ -283,7 +283,7 @@ h6 {
 /*end of services */
 
 /* Contact  */
-.address {
+/* .address {
   width: 90vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -291,12 +291,12 @@ h6 {
   column-gap: 3rem;
   margin: 0 auto;
   height: 100%;
-}
-@media (max-width: 720px) {
+} */
+/* @media (max-width: 720px) {
   .address {
     grid-template-columns: 1fr;
   }
-}
+} */
 .address-content {
   display: flex;
   justify-content: flex-start;
@@ -310,7 +310,7 @@ h6 {
 .address-info .head {
   font-weight: 600;
 }
-.card {
+.custom-card {
   position: relative;
   display: -ms-flexbox;
   display: flex;
@@ -323,13 +323,13 @@ h6 {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
-.card-body {
+.custom-card-body {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
 }
-.form-control {
+.custom-form-control {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -344,15 +344,10 @@ h6 {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-.form-group {
+.custom-form-group {
   margin-bottom: 1rem;
 }
-.bg-dark {
-  background-color: #343a40 !important;
-}
-.text-light {
-  color: #f8f9fa !important;
-}
+
 /* Contact end */
 /* featured rooms */
 
@@ -555,18 +550,10 @@ h6 {
   grid-row-gap: 2rem;
   grid-column-gap: 40px;
 }
-.form-groups {
-  text-transform: capitalize;
-}
-.form-group label {
+.custom-form-group label {
   display: block;
   letter-spacing: var(--mainSpacing);
   margin-bottom: 0.5rem;
-}
-.form-controls {
-  width: 100%;
-  background: transparent !important;
-  font-size: 1rem;
 }
 .size-inputs {
   display: flex;
@@ -604,4 +591,11 @@ h6 {
   font-weight: 300;
   background: #333;
   color: #fff;
+}
+.login,
+.registration {
+  width: 100%;
+  min-height: calc(100vh - 66px);
+  background: var(--mainWhite);
+  color: var(--mainBlack);
 }

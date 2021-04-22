@@ -13,7 +13,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <>
-        <nav className="navbar">
+        <nav className="custom-navbar">
           <div className="nav-center">
             <div className="nav-header">
               <Link to="/">
@@ -27,7 +27,11 @@ export default class Navbar extends Component {
               </button>
             </div>
             <ul
-              className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
+              className={
+                this.state.isOpen
+                  ? "custom-nav-links show-nav"
+                  : "custom-nav-links"
+              }
             >
               <li>
                 <NavLink exact to="/">
@@ -42,6 +46,16 @@ export default class Navbar extends Component {
               <li>
                 <NavLink exact to="/contact">
                   Contact
+                </NavLink>
+              </li>
+              <li>
+                <NavLink exact to="/login">
+                  Login
+                </NavLink>
+              </li>
+              <li>
+                <NavLink exact to="/registration">
+                  Registration
                 </NavLink>
               </li>
             </ul>

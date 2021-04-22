@@ -48,13 +48,13 @@ const RoomsFilter = ({ rooms }) => {
       <Title title="search room" />
       <form className="filter-form">
         {/* select type */}
-        <div className="form-groups">
+        <div className="custom-form-group">
           <label htmlFor="type">room type</label>
           <select
             name="type"
             id="type"
             value={type}
-            className="form-controls"
+            className="custom-form-control"
             onChange={handleChange}
           >
             {types}
@@ -62,13 +62,13 @@ const RoomsFilter = ({ rooms }) => {
         </div>
         {/* select type end */}
         {/* select capacity */}
-        <div className="form-groups">
+        <div className="custom-form-group">
           <label htmlFor="capacity">Guests</label>
           <select
             name="capacity"
             id="capacity"
             value={capacity}
-            className="form-controls"
+            className="custom-form-control"
             onChange={handleChange}
           >
             {people}
@@ -76,7 +76,7 @@ const RoomsFilter = ({ rooms }) => {
         </div>
         {/* select capacity end */}
         {/* Room Price */}
-        <div className="form-groups">
+        <div className="custom-form-group">
           <label htmlFor="price">room price ${price}</label>
           <input
             type="range"
@@ -86,13 +86,13 @@ const RoomsFilter = ({ rooms }) => {
             id="price"
             value={price}
             onChange={handleChange}
-            className="form-controls"
+            className="custom-form-control"
           />
         </div>
         {/* Room Price End */}
 
         {/* Size */}
-        <div className="form-groups">
+        <div className="custom-form-group">
           <label htmlFor="size">room size</label>
           <div className="size-inputs">
             <input
@@ -115,7 +115,7 @@ const RoomsFilter = ({ rooms }) => {
         </div>
         {/* Size End */}
         {/* Extras */}
-        <div className="form-groups">
+        <div className="custom-form-group">
           <div className="single-extra">
             <input
               type="checkbox"
