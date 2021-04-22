@@ -282,21 +282,6 @@ h6 {
 }
 /*end of services */
 
-/* Contact  */
-/* .address {
-  width: 90vw;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  row-gap: 1rem;
-  column-gap: 3rem;
-  margin: 0 auto;
-  height: 100%;
-} */
-/* @media (max-width: 720px) {
-  .address {
-    grid-template-columns: 1fr;
-  }
-} */
 .address-content {
   display: flex;
   justify-content: flex-start;
