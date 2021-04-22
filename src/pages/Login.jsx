@@ -16,7 +16,7 @@ const Login = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userInfo.name && userInfo.email && userInfo.phone && userInfo.message) {
+    if (userInfo.name && userInfo.email && userInfo.password) {
       alert("form submission successfull");
       setUserInfo({
         name: "",
