@@ -585,3 +585,11 @@ h6 {
   background: var(--mainWhite);
   color: var(--mainBlack);
 }
+.login,
+.registration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}

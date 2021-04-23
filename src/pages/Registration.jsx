@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 const Registration = () => {
   const [userInfo, setUserInfo] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     phone: "",
@@ -19,7 +20,8 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
-      userInfo.name &&
+      userInfo.firstName &&
+      userInfo.lastName &&
       userInfo.email &&
       userInfo.password &&
       userInfo.phone &&
@@ -27,7 +29,8 @@ const Registration = () => {
     ) {
       alert("form submission successfull");
       setUserInfo({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: "",
         phone: "",
@@ -40,9 +43,9 @@ const Registration = () => {
 
   return (
     <>
-      <section className="registration py-5">
+      <section className="registration">
         <div className="container">
-          <div className="row mt-5">
+          <div className="row">
             <div className="col-10 mx-auto col-md-8">
               <div className="card bg-light shadow text-dark p-3">
                 <div className="card-body">
@@ -50,42 +53,43 @@ const Registration = () => {
                     user registrarion form
                   </h2>
                   <form onSubmit={handleSubmit}>
-                    <div className="g-3">
-                      <div className="mb-2">
+                    <div className=" row g-3">
+                      <div className="col-md-6">
                         <label
-                          htmlFor="name"
+                          htmlFor="firstName"
                           className="form-label text-capitalize"
                         >
-                          name
+                          first name
                         </label>
                         <input
                           type="text"
-                          name="name"
-                          id="name"
-                          value={userInfo.name}
+                          name="firstName"
+                          id="firstName"
+                          value={userInfo.firstName}
                           onChange={inputFieldHandller}
                           className="form-control"
                           autoComplete="off"
                         />
                       </div>
-                      <div className="mb-2">
+                      <div className="col-md-6">
                         <label
-                          htmlFor="email"
+                          htmlFor="lastName"
                           className="form-label text-capitalize"
                         >
-                          email
+                          last name
                         </label>
                         <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          value={userInfo.email}
+                          type="text"
+                          name="lastName"
+                          id="lastName"
+                          value={userInfo.lastName}
                           onChange={inputFieldHandller}
                           className="form-control"
                           autoComplete="off"
                         />
                       </div>
-                      <div className="mb-2">
+
+                      <div className="col-md-6">
                         <label
                           htmlFor="phone"
                           className="form-label text-capitalize"
@@ -102,7 +106,7 @@ const Registration = () => {
                           autoComplete="off"
                         />
                       </div>
-                      <div className="mb-2">
+                      <div className="col-md-6">
                         <label
                           htmlFor="profession"
                           className="form-label text-capitalize"
@@ -119,7 +123,24 @@ const Registration = () => {
                           autoComplete="off"
                         />
                       </div>
-                      <div className="mb-2">
+                      <div className="col-md-6">
+                        <label
+                          htmlFor="email"
+                          className="form-label text-capitalize"
+                        >
+                          email
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          value={userInfo.email}
+                          onChange={inputFieldHandller}
+                          className="form-control"
+                          autoComplete="off"
+                        />
+                      </div>
+                      <div className="col-md-6">
                         <label
                           htmlFor="password"
                           className="form-label text-capitalize"

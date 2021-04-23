@@ -49,8 +49,11 @@ export default class SingleRoom extends Component {
       <>
         <StyledHero img={mainImg || this.state.defaultBcg}>
           <Banner title={`${name} room `}>
-            <Link to="/rooms" className="custom-btn-primary">
-              back to rooms
+            <Link to="/rooms" className="btn btn-outline-warning mx-2">
+              Back to rooms
+            </Link>
+            <Link to="/book" className="btn btn-outline-primary">
+              Book now
             </Link>
           </Banner>
         </StyledHero>

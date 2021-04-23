@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 const Login = () => {
   const [userInfo, setUserInfo] = useState({
-    name: "",
     email: "",
     password: "",
   });
@@ -20,7 +19,6 @@ const Login = () => {
     if (userInfo.name && userInfo.email && userInfo.password) {
       alert("form submission successfull");
       setUserInfo({
-        name: "",
         email: "",
         password: "",
       });
@@ -33,8 +31,8 @@ const Login = () => {
     <>
       <section className="login">
         <div className="container">
-          <div className="row mt-5">
-            <div className="col-10 mx-auto col-md-8">
+          <div className="row">
+            <div className="col-10 mx-auto col-md-7">
               <div className="card bg-light shadow text-dark p-3">
                 <div className="card-body">
                   <h2 className="text-capitalize text-center fw-bold">
@@ -42,23 +40,6 @@ const Login = () => {
                   </h2>
                   <form onSubmit={handleSubmit}>
                     <div className="g-3">
-                      <div className="mb-2">
-                        <label
-                          htmlFor="name"
-                          className="form-label text-capitalize"
-                        >
-                          name
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          id="name"
-                          value={userInfo.name}
-                          onChange={inputFieldHandller}
-                          className="form-control"
-                          autoComplete="off"
-                        />
-                      </div>
                       <div className="mb-2">
                         <label
                           htmlFor="email"
