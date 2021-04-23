@@ -578,7 +578,8 @@ h6 {
   color: #fff;
 }
 .login,
-.registration {
+.registration,
+.admin {
   width: 100%;
   min-height: calc(100vh - 66px);
   background: var(--mainWhite);

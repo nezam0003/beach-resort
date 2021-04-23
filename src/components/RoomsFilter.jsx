@@ -16,8 +16,6 @@ const RoomsFilter = ({ rooms }) => {
     price,
     minPrice,
     maxPrice,
-    minSize,
-    maxSize,
     breakfast,
     pets,
   } = context;
@@ -46,99 +44,135 @@ const RoomsFilter = ({ rooms }) => {
   return (
     <section className="filter-container">
       <Title title="search room" />
-      <form className="filter-form">
-        {/* select type */}
-        <div className="custom-form-group">
-          <label htmlFor="type">room type</label>
-          <select
-            name="type"
-            id="type"
-            value={type}
-            className="custom-form-control"
-            onChange={handleChange}
-          >
-            {types}
-          </select>
-        </div>
-        {/* select type end */}
-        {/* select capacity */}
-        <div className="custom-form-group">
-          <label htmlFor="capacity">Guests</label>
-          <select
-            name="capacity"
-            id="capacity"
-            value={capacity}
-            className="custom-form-control"
-            onChange={handleChange}
-          >
-            {people}
-          </select>
-        </div>
-        {/* select capacity end */}
-        {/* Room Price */}
-        <div className="custom-form-group">
-          <label htmlFor="price">room price ${price}</label>
-          <input
-            type="range"
-            name="price"
-            min={minPrice}
-            max={maxPrice}
-            id="price"
-            value={price}
-            onChange={handleChange}
-            className="custom-form-control"
-          />
-        </div>
-        {/* Room Price End */}
+      <div className="container">
+        <div className="row">
+          <div className="col-11 mx-auto col-md-10">
+            <div className="card shadow text-dark bg-light p-3">
+              <div className="card-body">
+                <form>
+                  {/* select type */}
+                  <div className="row g-3">
+                    <div className="col-md-4">
+                      <label
+                        className="form-label text-capitalize"
+                        htmlFor="type"
+                      >
+                        room type
+                      </label>
+                      <select
+                        name="type"
+                        id="type"
+                        value={type}
+                        className="form-select"
+                        onChange={handleChange}
+                      >
+                        {types}
+                      </select>
+                    </div>
 
-        {/* Size */}
-        <div className="custom-form-group">
-          <label htmlFor="size">room size</label>
-          <div className="size-inputs">
-            <input
-              type="number"
-              name="minSize"
-              id="size"
-              value={minSize}
-              onChange={handleChange}
-              className="size-input"
-            />
-            <input
-              type="number"
-              name="maxSize"
-              id="size"
-              value={maxSize}
-              onChange={handleChange}
-              className="size-input"
-            />
+                    {/* select type end */}
+                    {/* select capacity */}
+
+                    <div className="col-md-4">
+                      <label
+                        className="form-label text-capitalize"
+                        htmlFor="capacity"
+                      >
+                        Guests
+                      </label>
+                      <select
+                        name="capacity"
+                        id="capacity"
+                        value={capacity}
+                        className="form-select"
+                        onChange={handleChange}
+                      >
+                        {people}
+                      </select>
+                    </div>
+
+                    {/* select capacity end */}
+                    {/* Room Price */}
+                    <div className="col-md-4">
+                      <label
+                        className="form-label text-capitalize"
+                        htmlFor="price"
+                      >
+                        room price ${price}
+                      </label>
+                      <input
+                        type="range"
+                        name="price"
+                        min={minPrice}
+                        max={maxPrice}
+                        id="price"
+                        value={price}
+                        onChange={handleChange}
+                        className="form-range"
+                      />
+                    </div>
+                    {/* Room Price End */}
+
+                    {/* Size */}
+                    {/* <div className="col-md-4">
+                      <label className = "form-label text-capitalize" htmlFor="size">room size</label>
+                      <div className="size-inputs">
+                        <input
+                          type="number"
+                          name="minSize"
+                          id="size"
+                          value={minSize}
+                          onChange={handleChange}
+                          className="size-input"
+                        />
+                        <input
+                          type="number"
+                          name="maxSize"
+                          id="size"
+                          value={maxSize}
+                          onChange={handleChange}
+                          className="size-input"
+                        />
+                      </div>
+                    </div> */}
+                    {/* Size End */}
+                    {/* Extras */}
+                    <div className="col-md-4">
+                      <div className="form-check">
+                        <input
+                          type="checkbox"
+                          name="breakfast"
+                          id="breakfast"
+                          className="form-check-input"
+                          checked={breakfast}
+                          onChange={handleChange}
+                        />
+                        <label className="form-check-label" htmlFor="breakfast">
+                          breakfast
+                        </label>
+                      </div>
+                      <div className="form-check">
+                        <input
+                          type="checkbox"
+                          name="pets"
+                          id="pets"
+                          className="form-check-input"
+                          checked={pets}
+                          onChange={handleChange}
+                        />
+                        <label className="form-check-label" htmlFor="pets">
+                          pets
+                        </label>
+                      </div>
+                    </div>
+                    {/* Extras end */}
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
-        {/* Size End */}
-        {/* Extras */}
-        <div className="custom-form-group">
-          <div className="single-extra">
-            <input
-              type="checkbox"
-              name="breakfast"
-              id="breakfast"
-              checked={breakfast}
-              onChange={handleChange}
-            />
-            <label htmlFor="breakfast">breakfast</label>
-          </div>
-          <div className="single-extra">
-            <input
-              type="checkbox"
-              name="pets"
-              id="pets"
-              checked={pets}
-              onChange={handleChange}
-            />
-            <label htmlFor="pets">pets</label>
-          </div>
-        </div>
-        {/* Extras end */}
-      </form>
+      </div>
     </section>
   );
 };
