@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import logo from "../images/logo.svg";
 import { FaAlignRight } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default class Navbar extends Component {
   state = {
@@ -16,9 +15,9 @@ export default class Navbar extends Component {
         <nav className="custom-navbar">
           <div className="nav-center">
             <div className="nav-header">
-              <Link to="/">
-                <img src={logo} alt="beach resort" />
-              </Link>
+              <NavLink to="/">
+                ocean<span className="text-warning">View</span> resort
+              </NavLink>
               <button type="button" className="nav-btn">
                 <FaAlignRight
                   className="nav-icon"
