@@ -17,7 +17,7 @@
 }
 /* globals */
 body {
-  padding-top: 66px;
+  /* padding-top: 66px; */
   color: var(--mainBlack);
   background: var(--mainWhite);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -87,82 +87,6 @@ h6 {
   letter-spacing: var(--mainSpacing);
 }
 /* end of globals */
-/* Navbar */
-.custom-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 0.75rem 2rem;
-  background: var(--offWhite);
-  z-index: 1;
-}
-.nav-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-header a {
-  text-decoration: none;
-  text-transform: capitalize;
-  color: #222;
-  font-weight: 700;
-  letter-spacing: var(--mainSpacing);
-}
-.nav-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-.nav-icon {
-  font-size: 1.5rem;
-  color: var(--primaryColor);
-}
-.custom-nav-links {
-  height: 0;
-  overflow: hidden;
-  transition: var(--mainTransition);
-  list-style-type: none;
-}
-.custom-nav-links a {
-  display: block;
-  text-decoration: none;
-  padding: 1rem 0;
-  color: var(--mainBlack);
-  transition: var(--mainTransition);
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: var(--mainSpacing);
-}
-.custom-nav-links a:hover {
-  color: var(--primaryColor);
-}
-
-.show-nav {
-  height: 250px;
-}
-@media screen and (min-width: 968px) {
-  .nav-btn {
-    display: none;
-  }
-  .nav-center {
-    max-width: 1170px;
-    margin: 0 auto;
-    display: flex;
-  }
-  .custom-nav-links {
-    height: auto;
-    display: flex;
-    margin-left: 4rem;
-  }
-  .custom-nav-links a {
-    margin: 0 1rem;
-    padding: 0.5rem 0;
-  }
-}
-/* end of navbar */
 /* Hero */
 .defaultHero,
 .roomsHero,
@@ -587,7 +511,8 @@ h6 {
 }
 .login,
 .registration,
-.admin {
+.admin,
+.car {
   width: 100%;
   min-height: calc(100vh - 66px);
   background: var(--mainWhite);

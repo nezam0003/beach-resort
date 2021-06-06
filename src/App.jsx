@@ -11,6 +11,9 @@ import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import AdminDashboard from "./pages/AdminDashboard";
 import BookRoom from "./components/BookRoom";
+import PublicRoute from "./utils/publicRoute";
+import PrivateRoute from "./utils/privateRoute";
+import CarRentals from "./components/CarRentals";
 
 const App = () => {
   return (
@@ -20,11 +23,12 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/rooms/" component={Rooms} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/login" component={Login} />
+        <PublicRoute exact path="/login" component={Login} />
         <Route exact path="/registration" component={Registration} />
         <Route exact path="/rooms/:slug" component={SingleRoom} />
-        <Route exact path="/login/admin" component={AdminDashboard} />
+        <PrivateRoute exact path="/dashboard" component={AdminDashboard} />
         <Route exact path="/book" component={BookRoom} />
+        <Route exact path="/car" component={CarRentals} />
         <Route component={Error} />
       </Switch>
       <Footer />

@@ -1,29 +1,35 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { setUserSession } from "../utils/Common";
 
-const Login = () => {
-  const [userInfo, setUserInfo] = useState({
-    email: "",
-    password: "",
-  });
+const Login = (props) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const inputFieldHandller = (e) => {
-    const { name, value } = e.target;
-    setUserInfo({
-      ...userInfo,
-      [name]: value,
-    });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (userInfo.name && userInfo.email && userInfo.password) {
-      alert("form submission successfull");
-      setUserInfo({
-        email: "",
-        password: "",
+  const handleLogin = () => {
+    setError(null);
+    setLoading(true);
+    axios
+      .post("http://localhost:4000/users/signin", {
+        username: username,
+        password: password,
+      })
+      .then((response) => {
+        setLoading(false);
+        setUserSession(response.data.token, response.data.user);
+        props.history.push("/dashboard");
+      })
+      .catch((error) => {
+        setLoading(false);
+        if (error.response.status === 401 || error.response.status === 400) {
+          setError(error.response.data.message);
+        } else {
+          setError("something went wrong.");
+        }
+        console.log("error ", error);
       });
-    } else {
-      alert("please give us your requried information");
-    }
   };
 
   return (
@@ -37,21 +43,21 @@ const Login = () => {
                   <h2 className="text-capitalize text-center fw-bold">
                     admin login
                   </h2>
-                  <form onSubmit={handleSubmit}>
+                  <form>
                     <div className="g-3">
                       <div className="mb-2">
                         <label
-                          htmlFor="email"
+                          htmlFor="username"
                           className="form-label text-capitalize"
                         >
-                          email
+                          name
                         </label>
                         <input
-                          type="email"
-                          name="email"
-                          id="email"
-                          value={userInfo.email}
-                          onChange={inputFieldHandller}
+                          type="text"
+                          name="username"
+                          id="username"
+                          value={username}
+                          onChange={(e) => setUsername(e.target.value)}
                           className="form-control"
                           autoComplete="off"
                         />
@@ -67,18 +73,21 @@ const Login = () => {
                           type="password"
                           name="password"
                           id="password"
-                          value={userInfo.password}
-                          onChange={inputFieldHandller}
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
                           className="form-control"
                           autoComplete="off"
                         />
                       </div>
                     </div>
+                    {error && <p className="pt-2 text-danger">{error}</p>}
                     <div className="d-grid d-sm-block">
                       <input
-                        className="btn btn-info btn-lg  mt-3"
-                        type="submit"
-                        value="Submit"
+                        className="btn btn-info  mt-2"
+                        type="button"
+                        value={loading ? "Loading" : "Login"}
+                        disabled={loading}
+                        onClick={handleLogin}
                       />
                     </div>
                   </form>
