@@ -5,13 +5,13 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "./App.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-import { RoomProvider } from "./Context";
+import { AppProvider } from "./AppProvider";
 
 ReactDOM.render(
-  <RoomProvider>
+  <AppProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </RoomProvider>,
+  </AppProvider>,
   document.getElementById("root")
 );

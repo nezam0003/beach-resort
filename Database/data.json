@@ -1,0 +1,31 @@
+{
+  "clients": [
+    {
+      "id": "1",
+      "name": "client 1",
+      "phone": "01632146855",
+      "room": "room no",
+      "guest": "guest",
+      "checkIN": "10-1-2021",
+      "checkOut": "15-1-2021"
+    },
+    {
+      "id": "2",
+      "name": "client 2",
+      "phone": "01632146855",
+      "room": "room no",
+      "guest": "guest",
+      "checkIN": "10-2-2021",
+      "checkOut": "15-2-2021"
+    },
+    {
+      "id": "3",
+      "name": "client 3",
+      "phone": "01632146855",
+      "room": "room no",
+      "guest": "guest",
+      "checkIN": "10-1-2021",
+      "checkOut": "15-1-2021"
+    }
+  ]
+}

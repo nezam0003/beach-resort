@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { RoomContext } from "../Context";
+import { useGlobalContext } from "../AppProvider";
 import Title from "./Title";
 
 // Get unique values
@@ -8,7 +8,6 @@ const getUnique = (items, value) => {
 };
 
 const RoomsFilter = ({ rooms }) => {
-  const context = useContext(RoomContext);
   const {
     handleChange,
     type,
@@ -18,7 +17,7 @@ const RoomsFilter = ({ rooms }) => {
     maxPrice,
     breakfast,
     pets,
-  } = context;
+  } = useGlobalContext();
 
   // get unique type
   let types = getUnique(rooms, "type");
