@@ -25,7 +25,7 @@ const AdminDashboard = (props) => {
 
   useEffect(() => {
     fetchClients();
-  }, []);
+  }, [clients]);
 
   const handleLogout = () => {
     removeUserSession();
