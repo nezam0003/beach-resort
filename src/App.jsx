@@ -7,18 +7,21 @@ import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
-import Login from "./pages/Login";
-import Registration from "./pages/Registration";
-import AdminDashboard from "./pages/AdminDashboard";
-import BookRoom from "./components/BookRoom";
+import Login from "./Admin/Login";
+import Registration from "./Admin/Registration";
+import AdminDashboard from "./Admin/AdminDashboard";
+import BookRoom from "./Admin/BookRoom";
 import PublicRoute from "./utils/publicRoute";
 import PrivateRoute from "./utils/privateRoute";
 import CarRentals from "./components/CarRentals";
+import AdminNavbar from "./components/AdminNavbar";
+import { useGlobalContext } from "./AppProvider";
 
 const App = () => {
+  const { isAdminLogIn } = useGlobalContext();
   return (
     <>
-      <Navbar />
+      {isAdminLogIn ? <AdminNavbar /> : <Navbar />}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/rooms/" component={Rooms} />

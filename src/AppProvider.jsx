@@ -19,6 +19,8 @@ const AppProvider = ({ children }) => {
     pets: false,
   });
 
+  const [isAdminLogIn, setIsAdminLogIn] = useState(false);
+
   useEffect(() => {
     let rooms = formatData(items);
     let featuredRooms = rooms.filter((room) => room.featured === true);
@@ -110,6 +112,8 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         ...state,
+        isAdminLogIn,
+        setIsAdminLogIn,
         getRoom,
         handleChange,
       }}

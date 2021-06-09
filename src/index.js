@@ -6,12 +6,15 @@ import "./App.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { AppProvider } from "./AppProvider";
+import { AdminProvider } from "./Admin/App";
 
 ReactDOM.render(
   <AppProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <AdminProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AdminProvider>
   </AppProvider>,
   document.getElementById("root")
 );

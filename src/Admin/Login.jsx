@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { setUserSession } from "../utils/Common";
+import { useGlobalContext } from "../AppProvider";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const { setIsAdminLogIn } = useGlobalContext();
+
   const handleLogin = () => {
     setError(null);
     setLoading(true);
@@ -18,6 +22,7 @@ const Login = (props) => {
       .then((response) => {
         setLoading(false);
         setUserSession(response.data.token, response.data.user);
+        setIsAdminLogIn(true);
         props.history.push("/dashboard");
       })
       .catch((error) => {

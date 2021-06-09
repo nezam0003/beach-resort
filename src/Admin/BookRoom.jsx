@@ -1,14 +1,48 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { axios } from "../utils/axios";
 
 const BookRoom = () => {
+  const [addClients, setAddClients] = useState([]);
+
   const [userInfo, setUserInfo] = useState({
     name: "",
-    Phone: "",
+    phone: "",
     room: "",
     guest: "",
-    checkIn: "",
-    CheckOut: "",
+    checkIN: "",
+    checkOut: "",
   });
+
+  // const noClients = !addClients || addClients.length === 0;
+
+  const getClients = async () => {
+    const response = await axios
+      .get("/clients")
+      .catch((error) => console.log("error ", error));
+    if (response && response.data) {
+      setAddClients(response.data);
+    }
+  };
+
+  const addNewClient = async (e) => {
+    e.preventDefault();
+    const response = await axios
+      .post("/clients", userInfo)
+      .catch((error) => console.log("Error", error));
+    if (response) await getClients();
+    setUserInfo({
+      name: "",
+      phone: "",
+      room: "",
+      guest: "",
+      checkIN: "",
+      checkOut: "",
+    });
+  };
+
+  useEffect(() => {
+    getClients();
+  }, []);
 
   const inputFieldHandller = (e) => {
     const { name, value } = e.target;
@@ -16,28 +50,6 @@ const BookRoom = () => {
       ...userInfo,
       [name]: value,
     });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (
-      userInfo.name &&
-      userInfo.phone &&
-      userInfo.room &&
-      userInfo.guest &&
-      userInfo.checkIn &&
-      userInfo.checkOut
-    ) {
-      setUserInfo({
-        name: "",
-        Phone: "",
-        room: "",
-        guest: "",
-        checkIn: "",
-        CheckOut: "",
-      });
-    } else {
-      alert("please give us your requried information");
-    }
   };
 
   return (
@@ -51,7 +63,7 @@ const BookRoom = () => {
                   <h2 className="text-capitalize text-center fw-bold">
                     Make reservation
                   </h2>
-                  <form onSubmit={handleSubmit}>
+                  <form onSubmit={addNewClient}>
                     <div className="row g-3">
                       <div className="col-md-6">
                         <label
@@ -123,16 +135,16 @@ const BookRoom = () => {
                       </div>
                       <div className="col-md-6">
                         <label
-                          htmlFor="checkIn"
+                          htmlFor="checkIN"
                           className="form-label text-capitalize"
                         >
                           check-in
                         </label>
                         <input
                           type="date"
-                          name="checkIn"
-                          id="checkIn"
-                          value={userInfo.checkIn}
+                          name="checkIN"
+                          id="checkIN"
+                          value={userInfo.checkIN}
                           onChange={inputFieldHandller}
                           className="form-control"
                           autoComplete="off"
